@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Pop Live Stream | Premium Event</title>
+    <meta name="description" content="Saksikan live streaming event K-Pop favoritmu dengan kualitas premium.">
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="navbar">
+        <div class="nav-left">
+            <div class="logo">
+                <i class="fa-solid fa-music"></i>
+            </div>
+            <h1 class="site-title">K-Pop Live</h1>
+        </div>
+        <div class="nav-right">
+            <div class="live-badge">
+                <span class="dot"></span> LIVE
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Video Player -->
+        <section class="video-section fade-in-up">
+            <div class="video-container">
+                <!-- Tag video HTML5 -->
+                <video id="livePlayer" controls autoplay muted playsinline></video>
+            </div>
+        </section>
+
+        <!-- Two Column Layout -->
+        <section class="content-grid fade-in-up delay-1">
+
+            <!-- Left Column: Support -->
+            <div class="card support-card glass">
+                <h2>Support Stream</h2>
+                <p>Dukung streamer agar terus bisa menghadirkan konten K-Pop berkualitas untuk kalian.</p>
+
+                <div class="qr-container float-anim">
+                    <!-- QR Code ini otomatis di-generate berdasarkan link Saweria Anda -->
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://saweria.co/Kztream"
+                        alt="QR Code Saweria Kztream" class="qr-image">
+                </div>
+
+                <!-- Tombol sudah diarahkan langsung ke Saweria Kztream -->
+                <a href="https://saweria.co/Kztream" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-primary glow-pink">
+                    ❤️ Dukung via Saweria
+                </a>
+
+                <button id="openTutorialBtn" class="btn btn-secondary mt-15">
+                    📖 Tutorial Saweria
+                </button>
+            </div>
+
+            <!-- Right Column: Event Info -->
+            <div class="card info-card glass">
+                <div class="event-header">
+                    <h2>Informasi Event</h2>
+                    <!-- Karena eventnya hari ini (25 Juli 2026), badge disesuaikan -->
+                    <span class="status-badge" style="background: rgba(255, 77, 166, 0.2); color: var(--accent-pink);">Live Hari Ini</span>
+                </div>
+                
+                <div class="event-details">
+                    <h3 class="event-name" style="font-size: 1.4rem;">🏆 KM CHART AWARDS 2026</h3>
+                    
+                    <!-- Tanggal & Lokasi -->
+                    <div class="detail-item">
+                        <i class="fa-regular fa-calendar"></i>
+                        <span>Sabtu, 25 Juli 2026</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Hwajeong Gymnasium, Korea University, Seoul</span>
+                    </div>
+                    
+                    <!-- Garis Pemisah -->
+                    <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px 0;">
+                    
+                    <!-- Jadwal Live -->
+                    <div class="event-schedule" style="margin-bottom: 20px;">
+                        <h4 style="color: var(--accent-pink); margin-bottom: 12px; font-size: 1rem; font-weight: 600;">
+                            <i class="fa-regular fa-clock" style="margin-right: 8px;"></i> Jadwal (WIB)
+                        </h4>
+                        
+                        <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.05); padding: 12px 15px; border-radius: 10px; margin-bottom: 10px; border: 1px solid rgba(255,255,255,0.02);">
+                            <span style="color: #E0E0E0;">🎥 Red Carpet Live</span>
+                            <strong style="color: #FFF; background: rgba(0,0,0,0.3); padding: 4px 10px; border-radius: 6px;">14:00 WIB</strong>
+                        </div>
+                        
+                        <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.05); padding: 12px 15px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.02);">
+                            <span style="color: #E0E0E0;">🏆 Main Awards Ceremony</span>
+                            <strong style="color: #FFF; background: rgba(0,0,0,0.3); padding: 4px 10px; border-radius: 6px;">16:30 WIB</strong>
+                        </div>
+                    </div>
+                    
+                    <!-- MC & Presenter -->
+                    <div class="event-cast" style="margin-bottom: 25px; font-size: 0.95rem; color: #CCC; background: rgba(123, 97, 255, 0.05); padding: 15px; border-radius: 10px; border-left: 3px solid var(--accent-purple);">
+                        <p style="margin-bottom: 8px;"><strong>🎤 MC:</strong> Kang Tae Oh & Won Ji An</p>
+                        <p><strong>⭐ Special Presenter:</strong> Byeon Woo Seok</p>
+                    </div>
+                    
+                    <!-- Lineup Artist -->
+                    <div class="event-lineup">
+                        <h4 style="color: var(--accent-purple); margin-bottom: 12px; font-size: 1rem; font-weight: 600;">
+                            🎵 Lineup Artist
+                        </h4>
+                        <!-- Grid 2 Kolom untuk list artist agar hemat ruang dan rapi -->
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; font-size: 0.9rem; color: #E0E0E0;">
+                            <div>• TOMORROW X TOGETHER</div>
+                            <div>• ZEROBASEONE</div>
+                            <div>• P1Harmony</div>
+                            <div>• 82MAJOR</div>
+                            <div>• Hearts2Hearts</div>
+                            <div>• KickFlip</div>
+                            <div>• UNIS</div>
+                            <div>• NEWBEAT</div>
+                            <div>• Hi-Fi Un!corn</div>
+                            <div>• VVUP</div>
+                            <div>• ALLDAY PROJECT</div>
+                            <div>• CORTIS</div>
+                            <div>• LNGSHOT</div>
+                            <div>• ALPHA DRIVE ONE</div>
+                            <div style="grid-column: span 2;">• MODYSSEY</div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Bottom Ticker -->
+    <div class="ticker-wrap">
+        <div class="ticker">
+            <span class="ticker-item">Selamat datang di Live Streaming • Jangan lupa support melalui Saweria ❤️ • Terima
+                kasih sudah menonton • Ikuti terus event K-Pop favoritmu • </span>
+            <span class="ticker-item">Selamat datang di Live Streaming • Jangan lupa support melalui Saweria ❤️ • Terima
+                kasih sudah menonton • Ikuti terus event K-Pop favoritmu • </span>
+        </div>
+    </div>
+
+    <!-- Modal Tutorial -->
+    <div id="tutorialModal" class="modal">
+        <div class="modal-content glass">
+            <div class="modal-header">
+                <h2>Cara Berdonasi</h2>
+                <button class="close-btn" id="closeTutorialBtn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- Gambar tutorial diperbarui -->
+                <img src="images/tutorial_sawer_kztream.png" alt="Tutorial Saweria Kztream" class="tutorial-image">
+                <p>Ikuti panduan lengkap di atas untuk melakukan donasi via e-wallet atau transfer bank.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary close-modal-btn">Tutup</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- HLS.js untuk memutar m3u8 -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
