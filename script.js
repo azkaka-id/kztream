@@ -5,13 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
         /* --- HLS.js Video Player Logic --- */
         const video = document.getElementById('livePlayer');
 
-        // Ganti URL ini dengan link .m3u8 Anda
+        // Masukkan link m3u8 dari OK.ru
         const streamUrl = 'https://vsd132.okcdn.ru/hls/18020668410376.m3u8/sig/MhOxjqsKgn0/expires/1785057918708/srcIp/114.10.153.111/urls/178.237.29.198/clientType/0/srcAg/CHROME_ANDROID/mid/15601410842120/18020668410376_high/index.m3u8?p';
 
-        // Mengecek dukungan HLS.js di browser (Chrome, Firefox, Windows)
         if (Hls.isSupported()) {
             const hls = new Hls({
-                // Konfigurasi opsional agar streaming lebih mulus
                 enableWorker: true,
                 lowLatencyMode: true,
             });
@@ -20,11 +18,16 @@ document.addEventListener('DOMContentLoaded', () => {
             hls.attachMedia(video);
 
             hls.on(Hls.Events.MANIFEST_PARSED, function () {
-                // Video diputar otomatis (pastikan atribut 'muted' ada di HTML agar autoplay berfungsi)
                 video.play().catch(error => console.log("Autoplay dicegah oleh browser:", error));
             });
+
+            // Menambahkan error handling agar tahu jika stream diblokir
+            hls.on(Hls.Events.ERROR, function (event, data) {
+                if (data.fatal) {
+                    console.error("Terjadi kesalahan pada Live Stream:", data);
+                }
+            });
         }
-        // Fallback untuk browser yang mendukung HLS secara native (seperti Safari di iOS/Mac)
         else if (video.canPlayType('application/vnd.apple.mpegurl')) {
             video.src = streamUrl;
             video.addEventListener('loadedmetadata', function () {
