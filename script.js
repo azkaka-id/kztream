@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const video = document.getElementById('livePlayer');
 
         // Ganti URL ini dengan link .m3u8 Anda
-        const streamUrl = 'http://eotyfrt.cluster029.hosting.ovh.net/p/s/1,fd,l/stream.m3u8';
+        const streamUrl = 'https://vsd132.okcdn.ru/hls/18020668410376.m3u8/sig/MhOxjqsKgn0/expires/1785057918708/srcIp/114.10.153.111/urls/178.237.29.198/clientType/0/srcAg/CHROME_ANDROID/mid/15601410842120/18020668410376_high/index.m3u8?p';
 
         // Mengecek dukungan HLS.js di browser (Chrome, Firefox, Windows)
         if (Hls.isSupported()) {
