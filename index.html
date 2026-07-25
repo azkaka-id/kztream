@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>K-Pop Live Stream | Premium Event</title>
     <meta name="description" content="Saksikan live streaming event K-Pop favoritmu dengan kualitas premium.">
-
-    <!-- Google Fonts: Poppins -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://api.qrserver.com; media-src 'self' https:;">
+    
+        <!-- Google Fonts: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
@@ -78,12 +80,13 @@
                 <div class="event-header">
                     <h2>Informasi Event</h2>
                     <!-- Karena eventnya hari ini (25 Juli 2026), badge disesuaikan -->
-                    <span class="status-badge" style="background: rgba(255, 77, 166, 0.2); color: var(--accent-pink);">Live Hari Ini</span>
+                    <span class="status-badge"
+                        style="background: rgba(255, 77, 166, 0.2); color: var(--accent-pink);">Live Hari Ini</span>
                 </div>
-                
+
                 <div class="event-details">
                     <h3 class="event-name" style="font-size: 1.4rem;">🏆 KM CHART AWARDS 2026</h3>
-                    
+
                     <!-- Tanggal & Lokasi -->
                     <div class="detail-item">
                         <i class="fa-regular fa-calendar"></i>
@@ -93,40 +96,49 @@
                         <i class="fa-solid fa-location-dot"></i>
                         <span>Hwajeong Gymnasium, Korea University, Seoul</span>
                     </div>
-                    
+
                     <!-- Garis Pemisah -->
                     <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px 0;">
-                    
+
                     <!-- Jadwal Live -->
                     <div class="event-schedule" style="margin-bottom: 20px;">
                         <h4 style="color: var(--accent-pink); margin-bottom: 12px; font-size: 1rem; font-weight: 600;">
                             <i class="fa-regular fa-clock" style="margin-right: 8px;"></i> Jadwal (WIB)
                         </h4>
-                        
-                        <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.05); padding: 12px 15px; border-radius: 10px; margin-bottom: 10px; border: 1px solid rgba(255,255,255,0.02);">
+
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.05); padding: 12px 15px; border-radius: 10px; margin-bottom: 10px; border: 1px solid rgba(255,255,255,0.02);">
                             <span style="color: #E0E0E0;">🎥 Red Carpet Live</span>
-                            <strong style="color: #FFF; background: rgba(0,0,0,0.3); padding: 4px 10px; border-radius: 6px;">14:00 WIB</strong>
+                            <strong
+                                style="color: #FFF; background: rgba(0,0,0,0.3); padding: 4px 10px; border-radius: 6px;">14:00
+                                WIB</strong>
                         </div>
-                        
-                        <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.05); padding: 12px 15px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.02);">
+
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.05); padding: 12px 15px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.02);">
                             <span style="color: #E0E0E0;">🏆 Main Awards Ceremony</span>
-                            <strong style="color: #FFF; background: rgba(0,0,0,0.3); padding: 4px 10px; border-radius: 6px;">16:30 WIB</strong>
+                            <strong
+                                style="color: #FFF; background: rgba(0,0,0,0.3); padding: 4px 10px; border-radius: 6px;">16:30
+                                WIB</strong>
                         </div>
                     </div>
-                    
+
                     <!-- MC & Presenter -->
-                    <div class="event-cast" style="margin-bottom: 25px; font-size: 0.95rem; color: #CCC; background: rgba(123, 97, 255, 0.05); padding: 15px; border-radius: 10px; border-left: 3px solid var(--accent-purple);">
+                    <div class="event-cast"
+                        style="margin-bottom: 25px; font-size: 0.95rem; color: #CCC; background: rgba(123, 97, 255, 0.05); padding: 15px; border-radius: 10px; border-left: 3px solid var(--accent-purple);">
                         <p style="margin-bottom: 8px;"><strong>🎤 MC:</strong> Kang Tae Oh & Won Ji An</p>
                         <p><strong>⭐ Special Presenter:</strong> Byeon Woo Seok</p>
                     </div>
-                    
+
                     <!-- Lineup Artist -->
                     <div class="event-lineup">
-                        <h4 style="color: var(--accent-purple); margin-bottom: 12px; font-size: 1rem; font-weight: 600;">
+                        <h4
+                            style="color: var(--accent-purple); margin-bottom: 12px; font-size: 1rem; font-weight: 600;">
                             🎵 Lineup Artist
                         </h4>
                         <!-- Grid 2 Kolom untuk list artist agar hemat ruang dan rapi -->
-                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; font-size: 0.9rem; color: #E0E0E0;">
+                        <div
+                            style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; font-size: 0.9rem; color: #E0E0E0;">
                             <div>• TOMORROW X TOGETHER</div>
                             <div>• ZEROBASEONE</div>
                             <div>• P1Harmony</div>
@@ -144,7 +156,7 @@
                             <div style="grid-column: span 2;">• MODYSSEY</div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
 
