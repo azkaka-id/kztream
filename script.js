@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const video = document.getElementById('livePlayer');
     
     // URL Asli Stream
-    const originalUrl = 'https://manifest.media-delivery.net/kbs2/index.m3u8?token=eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4R0NNIn0..Q_khzDYClLeLvpd_.b2Tuw63lDyqeg-XF1QyBeRt4FhtvqEeWebKBuhcIYyduLp3Q6u_pog9rF9-1EDFGjg0tzSIT12z2FNH5_SfVbrWcKSmPOCcMiIOkvuTz6oU9_Kik5TxpsWXhUqWtyIazjGzwrwlgKaymICqF9hiD78f4eU5wN2yJnQi-3srLDrTHDay2JY4QJ8LbWSKOlxCuAL2tDMfMckyKZwT_taETBW56Lm3-8SaFlAsah_QboW0b_jXVPLAtgqPH2CJyNFR9Dz6BdzsRVMXFVaGYfgU5enNCIRUMwwPt3ykEHC08fPGabfsk18Xs5DIFPZmmLhPM4u4VFSXGPA922-RU1zONvsa-5Yw7X00KUE-2KRp4cKnHf6t9v6nz9pwafEpQxZVcJaJKfXR6Dj4L6VPXHN2OFm37FJDTY2Wlo7bGAMGZbr6D7rGtM0YCOg54x85VsxjLNnMYAiLn42zHyZM0dHWirgvbx_cTXJRfdoDR4KP4aA8soyAUkQ0Ouv-yGLZSagRlCkyKjDuZBJiN9yfBuigIq3zmPOzpop5afy5MWNfpBU-pZ127BMbFg9N--bnj_l0sU5ZFCoComcENw-c6W5DnSNthIsfFwMk.Ymv57eAK_5SSqPyZke1aTA&platformLanguage=id';
+    const originalUrl = 'https://jtvonair.sbsoft.net/jtv_live/myStream/chunklist_w1621730459.m3u8';
     
     // URL Proxy CORS (Gunakan AllOrigins jika corsproxy.io mengalami pembatasan rate-limit)
     const proxyUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(originalUrl);
