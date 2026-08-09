@@ -7,7 +7,7 @@
     <title>K-Pop Live Stream | Premium Event</title>
     <meta name="description" content="Saksikan live streaming event K-Pop favoritmu dengan kualitas premium.">
     <meta http-equiv="Content-Security-Policy"
-      content="default-src 'self' https:; connect-src 'self' https: blob:; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://api.qrserver.com; media-src 'self' https: blob:;">
+  content="default-src 'self' https:; connect-src 'self' https: blob:; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://www.youtube.com https://s.ytimg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://api.qrserver.com https://i.ytimg.com; media-src 'self' https: blob:; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com;">
 
     <!-- Google Fonts: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,8 +45,12 @@
         <!-- Video Player -->
         <section class="video-section fade-in-up">
             <div class="video-container">
-                <!-- Tag video HTML5 -->
-                <video id="livePlayer" controls autoplay muted playsinline></video>
+                <!-- Player untuk HLS / m3u8 -->
+                <video id="livePlayer" controls autoplay muted playsinline style="display: none;"></video>
+
+                <!-- Container untuk YouTube Embed -->
+                <div id="youtubePlayer"
+                    style="display: none; width: 100%; height: 100%; position: absolute; top:0; left:0;"></div>
             </div>
         </section>
 
@@ -79,22 +83,22 @@
             <div class="card info-card glass">
                 <div class="event-header">
                     <h2>Informasi Event</h2>
-                    <!-- Karena eventnya hari ini (25 Juli 2026), badge disesuaikan -->
+                    <!-- Status event per 5 Agustus 2026 -->
                     <span class="status-badge"
-                        style="background: rgba(255, 77, 166, 0.2); color: var(--accent-pink);">Live Hari Ini</span>
+                        style="background: rgba(123, 97, 255, 0.2); color: var(--accent-purple);">Akan Datang</span>
                 </div>
 
                 <div class="event-details">
-                    <h3 class="event-name" style="font-size: 1.4rem;">🏆 KM CHART AWARDS 2026</h3>
+                    <h3 class="event-name" style="font-size: 1.4rem;">🏆 K-WORLD DREAM AWARDS 2026</h3>
 
                     <!-- Tanggal & Lokasi -->
                     <div class="detail-item">
                         <i class="fa-regular fa-calendar"></i>
-                        <span>Sabtu, 25 Juli 2026</span>
+                        <span>Kamis, 27 Agustus 2026</span>
                     </div>
                     <div class="detail-item">
                         <i class="fa-solid fa-location-dot"></i>
-                        <span>Hwajeong Gymnasium, Korea University, Seoul</span>
+                        <span>KINTEX, Goyang, Gyeonggi-do, Korea Selatan</span>
                     </div>
 
                     <!-- Garis Pemisah -->
@@ -108,26 +112,26 @@
 
                         <div
                             style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.05); padding: 12px 15px; border-radius: 10px; margin-bottom: 10px; border: 1px solid rgba(255,255,255,0.02);">
-                            <span style="color: #E0E0E0;">🎥 Red Carpet Live</span>
+                            <span style="color: #E0E0E0;">🎥 Red Carpet</span>
                             <strong
-                                style="color: #FFF; background: rgba(0,0,0,0.3); padding: 4px 10px; border-radius: 6px;">14:00
-                                WIB</strong>
+                                style="color: #FFF; background: rgba(0,0,0,0.3); padding: 4px 10px; border-radius: 6px;">Segera
+                                Diumumkan</strong>
                         </div>
 
                         <div
                             style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.05); padding: 12px 15px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.02);">
-                            <span style="color: #E0E0E0;">🏆 Main Awards Ceremony</span>
+                            <span style="color: #E0E0E0;">🏆 Acara Penghargaan</span>
                             <strong
-                                style="color: #FFF; background: rgba(0,0,0,0.3); padding: 4px 10px; border-radius: 6px;">16:30
-                                WIB</strong>
+                                style="color: #FFF; background: rgba(0,0,0,0.3); padding: 4px 10px; border-radius: 6px;">Segera
+                                Diumumkan</strong>
                         </div>
                     </div>
 
                     <!-- MC & Presenter -->
                     <div class="event-cast"
                         style="margin-bottom: 25px; font-size: 0.95rem; color: #CCC; background: rgba(123, 97, 255, 0.05); padding: 15px; border-radius: 10px; border-left: 3px solid var(--accent-purple);">
-                        <p style="margin-bottom: 8px;"><strong>🎤 MC:</strong> Kang Tae Oh & Won Ji An</p>
-                        <p><strong>⭐ Special Presenter:</strong> Byeon Woo Seok</p>
+                        <p style="margin-bottom: 8px;"><strong>🎤 MC:</strong> Jun Hyun Moo & Jang Do Yeon</p>
+                        <p><strong>✨ Edisi Spesial:</strong> Perayaan 10 tahun ajang penghargaan</p>
                     </div>
 
                     <!-- Lineup Artist -->
@@ -139,22 +143,27 @@
                         <!-- Grid 2 Kolom untuk list artist agar hemat ruang dan rapi -->
                         <div
                             style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; font-size: 0.9rem; color: #E0E0E0;">
-                            <div>• TOMORROW X TOGETHER</div>
-                            <div>• ZEROBASEONE</div>
+                            <div>• ATEEZ</div>
                             <div>• P1Harmony</div>
+                            <div>• RIIZE</div>
+                            <div>• AHOF</div>
+                            <div>• AND2BLE</div>
+                            <div>• SeeYa</div>
+                            <div>• QWER</div>
+                            <div>• ILLIT</div>
+                            <div>• RESCENE</div>
+                            <div>• JAY B (GOT7)</div>
+                            <div>• Seongri</div>
+                            <div>• Evan (Heeseung)</div>
+                            <div>• Park Ji Hyeon</div>
+                            <div>• &amp;TEAM</div>
+                            <div>• xikers</div>
                             <div>• 82MAJOR</div>
-                            <div>• Hearts2Hearts</div>
                             <div>• KickFlip</div>
-                            <div>• UNIS</div>
-                            <div>• NEWBEAT</div>
-                            <div>• Hi-Fi Un!corn</div>
-                            <div>• VVUP</div>
-                            <div>• ALLDAY PROJECT</div>
-                            <div>• CORTIS</div>
-                            <div>• LNGSHOT</div>
                             <div>• ALPHA DRIVE ONE</div>
-                            <div style="grid-column: span 2;">• MODYSSEY</div>
                         </div>
+                        <p style="margin-top: 12px; color: #AAA; font-size: 0.8rem;">* Lineup dapat berubah mengikuti
+                            pengumuman penyelenggara.</p>
                     </div>
 
                 </div>

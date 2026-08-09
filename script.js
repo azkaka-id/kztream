@@ -1,70 +1,86 @@
 document.addEventListener('DOMContentLoaded', () => {
-    /* --- HLS.js Video Player Logic --- */
+    // --- 1. SELEKSI ELEMEN PLAYER ---
     const video = document.getElementById('livePlayer');
-    
-    // URL Asli Stream
-    const originalUrl = 'https://jtvonair.sbsoft.net/jtv_live/myStream/chunklist_w1621730459.m3u8';
-    
-    // URL Proxy CORS (Gunakan AllOrigins jika corsproxy.io mengalami pembatasan rate-limit)
-    const proxyUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(originalUrl);
+    const ytContainer = document.getElementById('youtubePlayer');
 
-    let isUsingProxy = false;
+    // Bebas masukkan link YouTube (watch / live) atau link .m3u8 di sini
+    const streamUrl = 'https://vsd140.okcdn.ru/hls/17367435512365.m3u8/sig/GddX46Qqtkw/expires/1786354214082/srcIp/114.10.152.60/urls/185.226.55.70/clientType/0/srcAg/CHROME_ANDROID/mid/16152377302573/17367435512365_high/index.m3u8?p'; 
+    let ytPlayer = null; // Menyimpan instance YouTube Player
 
-    const playVideo = () => {
-        video.play().catch(error => {
-            console.log("Autoplay dicegah oleh browser. Pengguna harus mengklik player:", error);
-        });
-    };
-
-    if (Hls.isSupported()) {
-        const hls = new Hls({
-            enableWorker: true,
-            lowLatencyMode: true,
-        });
-
-        // Coba muat URL Asli terlebih dahulu
-        hls.loadSource(originalUrl);
-        hls.attachMedia(video);
-
-        hls.on(Hls.Events.MANIFEST_PARSED, function () {
-            playVideo();
-        });
-
-        hls.on(Hls.Events.ERROR, function (event, data) {
-            if (data.fatal) {
-                switch (data.type) {
-                    case Hls.ErrorTypes.NETWORK_ERROR:
-                        console.error("Gagal memuat video dari URL asli. Memencet fallback proxy CORS...", data);
-                        
-                        // Jika belum mencoba proxy, coba beralih ke proxy URL
-                        if (!isUsingProxy) {
-                            isUsingProxy = true;
-                            hls.loadSource(proxyUrl);
-                            hls.startLoad();
-                        } else {
-                            // Jika proxy juga gagal, coba muat ulang setelah beberapa detik
-                            hls.startLoad();
-                        }
-                        break;
-                    case Hls.ErrorTypes.MEDIA_ERROR:
-                        console.error("Masalah media, mencoba memulihkan...", data);
-                        hls.recoverMediaError();
-                        break;
-                    default:
-                        hls.destroy();
-                        break;
-                }
-            }
-        });
-    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        // Fallback untuk browser Safari / Apple yang memiliki dukungan HLS bawaan
-        video.src = originalUrl;
-        video.addEventListener('loadedmetadata', function () {
-            playVideo();
-        });
+    // --- 2. FUNGSI PEMBANTU (UTILITY) ---
+    function isYouTubeUrl(url) {
+        return (url.includes("youtube.com") || url.includes("youtu.be"));
     }
 
-    /* --- Page Load Animations --- */
+    function getYouTubeId(url) {
+        const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+        const match = url.match(regExp);
+        return (match && match[2].length === 11) ? match[2] : null;
+    }
+
+    // --- 3. LOGIKA PEMUTARAN VIDEO ---
+    if (isYouTubeUrl(streamUrl)) {
+        // Jika Link YouTube
+        const videoId = getYouTubeId(streamUrl);
+        
+        if (video) video.style.display = 'none';
+        if (ytContainer) ytContainer.style.display = 'block';
+
+        // Load YouTube Iframe API jika belum ada
+        if (!window.YT) {
+            const tag = document.createElement('script');
+            tag.src = "https://www.youtube.com/iframe_api";
+            const firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        }
+
+        window.onYouTubeIframeAPIReady = () => {
+            ytPlayer = new YT.Player('youtubePlayer', {
+                videoId: videoId,
+                playerVars: {
+                    'autoplay': 1,
+                    'controls': 1,
+                    'modestbranding': 1,
+                    'rel': 0
+                },
+                events: {
+                    'onReady': (event) => {
+                        event.target.mute(); // Mute agar autoplay berjalan lancar
+                        event.target.playVideo();
+                    }
+                }
+            });
+        };
+    } else {
+        // Jika Link .m3u8 / HLS
+        if (ytContainer) ytContainer.style.display = 'none';
+        if (video) video.style.display = 'block';
+
+        const playVideo = () => {
+            video.play().catch(error => {
+                console.log("Autoplay dicegah oleh browser:", error);
+            });
+        };
+
+        if (Hls.isSupported()) {
+            const hls = new Hls({
+                enableWorker: true,
+                lowLatencyMode: true,
+            });
+            hls.loadSource(streamUrl);
+            hls.attachMedia(video);
+            hls.on(Hls.Events.MANIFEST_PARSED, () => {
+                playVideo();
+            });
+        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+            video.src = streamUrl;
+            video.addEventListener('loadedmetadata', () => {
+                playVideo();
+            });
+        }
+    }
+
+    // --- 4. ANIMASI HALAMAN ---
     const fadeElements = document.querySelectorAll('.fade-in-up');
     setTimeout(() => {
         fadeElements.forEach(el => {
@@ -72,57 +88,57 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, 100);
 
-    /* --- Modal Popup Logic --- */
+    // --- 5. LOGIKA MODAL TUTORIAL ---
     const modal = document.getElementById('tutorialModal');
     const openBtn = document.getElementById('openTutorialBtn');
     const closeBtn = document.getElementById('closeTutorialBtn');
     const closeBtnFooter = document.querySelector('.close-modal-btn');
 
     const openModal = () => {
-        modal.classList.add('show');
-        document.body.style.overflow = 'hidden';
+        if (modal) {
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
     };
-
     const closeModal = () => {
-        modal.classList.remove('show');
-        document.body.style.overflow = 'auto';
+        if (modal) {
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
     };
 
     if (openBtn) openBtn.addEventListener('click', openModal);
     if (closeBtn) closeBtn.addEventListener('click', closeModal);
     if (closeBtnFooter) closeBtnFooter.addEventListener('click', closeModal);
-
     if (modal) {
         modal.addEventListener('click', (e) => {
             if (e.target === modal) closeModal();
         });
     }
-
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && modal && modal.classList.contains('show')) {
             closeModal();
         }
     });
-});
 
-document.addEventListener('DOMContentLoaded', () => {
-    const video = document.getElementById('livePlayer');
-
-    // --- FUNGSI MENGHENTIKAN VIDEO ---
+    // --- 6. KEAMANAN / ANTI INSPECT ELEMENT ---
     function stopVideoOnInspect() {
-        if (video) {
+        // Hentikan Video HTML5 jika aktif
+        if (video && video.style.display !== 'none') {
             video.pause();
-            video.src = ''; // Menghapus source video
-            video.load();   // Reset player
-            alert("Inspect Element terdeteksi. Video dihentikan demi keamanan.");
+            video.src = '';
+            video.load();
         }
+        // Hentikan Video YouTube jika aktif
+        if (ytPlayer && typeof ytPlayer.stopVideo === 'function') {
+            ytPlayer.stopVideo();
+        }
+        alert("Inspect Element terdeteksi. Video dihentikan demi keamanan.");
     }
 
-    // --- DETEKSI 1: MENCEGAH KLIK KANAN & SHORTCUT INSPECT ---
-    document.addEventListener('contextmenu', (e) => e.preventDefault()); // Matikan Klik Kanan
-
+    // Mencegah Klik Kanan & Shortcut DevTools
+    document.addEventListener('contextmenu', (e) => e.preventDefault());
     document.addEventListener('keydown', (e) => {
-        // Matikan F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
         if (
             e.key === 'F12' || 
             (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j')) ||
@@ -133,24 +149,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- DETEKSI 2: DETEKSI DEVTOOLS BERDASARKAN UKURAN WINDOW ---
-    const threshold = 160; // Beda ukuran piksel saat DevTools terbuka
+    // Deteksi Berdasarkan Ukuran Window
+    const threshold = 160;
     setInterval(() => {
         const widthThreshold = window.outerWidth - window.innerWidth > threshold;
         const heightThreshold = window.outerHeight - window.innerHeight > threshold;
-        
         if (widthThreshold || heightThreshold) {
             stopVideoOnInspect();
         }
     }, 1000);
 
-    // --- DETEKSI 3: DETEKSI TRAP DEBUGGER (Untuk DevTools Terpisah/Undocked) ---
+    // Deteksi Debugger Trap
     setInterval(() => {
         const startTime = performance.now();
-        debugger; // Jika DevTools terbuka, baris ini akan menghentikan sementara JavaScript
+        debugger;
         const endTime = performance.now();
-
-        // Jika jeda waktu lebih lama dari 100ms, artinya DevTools sedang terbuka
         if (endTime - startTime > 100) {
             stopVideoOnInspect();
         }
