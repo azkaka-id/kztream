@@ -1,1 +1,6 @@
+# Abaikan file sumber kode asli yang berisi link mentah
 script.src.js
+
+# (Opsional) Abaikan folder atau file sistem lokal
+.DS_Store
+node_modules/
