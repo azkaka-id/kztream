@@ -20,6 +20,116 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Anti-DevTools Library (Auto Redirect ke about:blank) -->
+    <script src="https://cdn.jsdelivr.net/npm/disable-devtool" url="about:blank"></script>
+
+    <!-- Script Keamanan Utama (Anti-Inspect & Anti-DevTools) -->
+    <script>
+        (function () {
+            // Fungsi pengusir ke about:blank
+            function banish() {
+                try { window.stop(); } catch (e) {}
+                try {
+                    if (document.documentElement) {
+                        document.documentElement.innerHTML = '';
+                    }
+                } catch (e) {}
+                window.location.replace('about:blank');
+                window.location.href = 'about:blank';
+                setInterval(function () {
+                    window.location.replace('about:blank');
+                }, 50);
+            }
+
+            // Mencegah dan mendeteksi Shortcut Inspect / DevTools (Windows, Linux, macOS)
+            window.addEventListener('keydown', function (e) {
+                // F12
+                if (e.key === 'F12' || e.keyCode === 123) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    banish();
+                    return false;
+                }
+
+                var isCtrlOrMeta = e.ctrlKey || e.metaKey; // Ctrl (Windows/Linux) atau Cmd (Mac)
+                var isShiftOrAlt = e.shiftKey || e.altKey; // Shift atau Alt/Option (Mac)
+                var key = (e.key || '').toUpperCase();
+
+                // Ctrl+Shift+I / Cmd+Option+I (Inspect DevTools)
+                // Ctrl+Shift+J / Cmd+Option+J (DevTools Console)
+                // Ctrl+Shift+C / Cmd+Option+C (Inspect Element Selector)
+                // Ctrl+Shift+K (Firefox Web Console)
+                // Ctrl+Shift+E (Firefox Network Tab)
+                if (isCtrlOrMeta && isShiftOrAlt) {
+                    if (key === 'I' || key === 'J' || key === 'C' || key === 'K' || key === 'E') {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        banish();
+                        return false;
+                    }
+                }
+
+                // Ctrl+U / Cmd+Option+U / Cmd+U (View Page Source)
+                // Ctrl+S / Cmd+S (Save Page)
+                // Ctrl+P / Cmd+P (Print Page)
+                if (isCtrlOrMeta) {
+                    if (key === 'U' || key === 'S' || key === 'P') {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        banish();
+                        return false;
+                    }
+                }
+            }, true);
+
+            // Mencegah Klik Kanan (Context Menu)
+            window.addEventListener('contextmenu', function (e) {
+                e.preventDefault();
+                return false;
+            }, true);
+
+            // Deteksi DevTools Berdasarkan Perubahan Dimensi Window (Docked DevTools)
+            var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+                (window.matchMedia('(pointer: coarse)').matches && screen.width <= 768);
+
+            function checkDimensions() {
+                if (!isMobile) {
+                    var threshold = 160;
+                    var widthDiff = window.outerWidth - window.innerWidth > threshold;
+                    var heightDiff = window.outerHeight - window.innerHeight > threshold;
+                    if (widthDiff || heightDiff) {
+                        banish();
+                    }
+                }
+            }
+            window.addEventListener('resize', checkDimensions);
+            checkDimensions();
+            setInterval(checkDimensions, 400);
+
+            // Deteksi DevTools via Debugger Trap
+            setInterval(function () {
+                var t0 = performance.now();
+                debugger;
+                var t1 = performance.now();
+                if (t1 - t0 > 100) {
+                    banish();
+                }
+            }, 500);
+
+            // Deteksi DevTools Terpisah (Undocked) via Console Getter
+            var detector = new Image();
+            Object.defineProperty(detector, 'id', {
+                get: function () {
+                    banish();
+                }
+            });
+            setInterval(function () {
+                console.log('%c', detector);
+                console.clear();
+            }, 1000);
+        })();
+    </script>
 </head>
 
 <body>
@@ -184,10 +294,8 @@
     <!-- Bottom Ticker -->
     <div class="ticker-wrap">
         <div class="ticker">
-            <span class="ticker-item">Selamat datang di Live Streaming • Jangan lupa support melalui Saweria ❤️ • Terima
-                kasih sudah menonton • Ikuti terus event K-Pop favoritmu • </span>
-            <span class="ticker-item">Selamat datang di Live Streaming • Jangan lupa support melalui Saweria ❤️ • Terima
-                kasih sudah menonton • Ikuti terus event K-Pop favoritmu • </span>
+            <span class="ticker-item">📢 Jika live streaming macet atau ada kendala, jangan lupa support melalui Saweria atau QRIS untuk kasih tahu mimin ya! ❤️ Terima kasih sudah menonton & selamat menikmati tayangan • </span>
+            <span class="ticker-item">📢 Jika live streaming macet atau ada kendala, jangan lupa support melalui Saweria atau QRIS untuk kasih tahu mimin ya! ❤️ Terima kasih sudah menonton & selamat menikmati tayangan • </span>
         </div>
     </div>
 
