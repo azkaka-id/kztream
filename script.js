@@ -1,50 +1,259 @@
-function _0x57a5(_0x5a3534,_0x3cc0aa){_0x5a3534=_0x5a3534-0x10b;const _0xbeaf1d=_0xbeaf();let _0x57a552=_0xbeaf1d[_0x5a3534];return _0x57a552;}const _0x3bd0df=_0x57a5;function _0xbeaf(){const _0x53f22a=['block','script','4trBxfi','1484022oHlBJJ','Events','error','overflow','parentNode','F12','platform','https://vsd270.okcdn.ru/hls/19669498464923.m3u8/sig/122mczzbjYQ/expires/1790243223583/srcIp/114.10.153.38/urls/178.237.29.195/clientType/0/srcAg/CHROME_ANDROID/mid/16456744902299/19669498464923_high/index.m3u8?p','matches','body','play','add','function','canPlayType','1824790xZkEHN','log','userAgent','Inspect\x20Element\x20terdeteksi.\x20Video\x20dihentikan\x20demi\x20keamanan.','src','length','createElement','loadedmetadata','Video\x20gagal\x20diputar\x20di\x20native\x20HLS:','isSupported','loadSource','(pointer:\x20coarse)','1118388XtlCZv','remove','catch','key','querySelector','show','getElementsByTagName','ctrlKey','application/vnd.apple.mpegurl','innerHeight','776956nkPOkS','.fade-in-up','ERROR','Player','keydown','includes','innerWidth','addEventListener','contextmenu','youtubePlayer','style','getElementById','1623195xrlclm','Browser\x20ini\x20tidak\x20mendukung\x20pemutaran\x20HLS/m3u8.','.close-modal-btn','livePlayer','57147UrssdL','youtu.be','tutorialModal','MANIFEST_PARSED','now','match','attachMedia','pause','Hls','none','target','HLS\x20error:','maxTouchPoints','hidden','querySelectorAll','click','load','https://www.youtube.com/iframe_api','265867xAYPih','loaded','forEach','24pBXIBR','display','classList'];_0xbeaf=function(){return _0x53f22a;};return _0xbeaf();}(function(_0x29d830,_0x436e22){const _0x23c784=_0x57a5,_0x36b431=_0x29d830();while(!![]){try{const _0x38361a=-parseInt(_0x23c784(0x10d))/0x1+-parseInt(_0x23c784(0x14c))/0x2+-parseInt(_0x23c784(0x142))/0x3*(-parseInt(_0x23c784(0x127))/0x4)+parseInt(_0x23c784(0x136))/0x5+parseInt(_0x23c784(0x128))/0x6+parseInt(_0x23c784(0x11f))/0x7*(-parseInt(_0x23c784(0x122))/0x8)+-parseInt(_0x23c784(0x158))/0x9;if(_0x38361a===_0x436e22)break;else _0x36b431['push'](_0x36b431['shift']());}catch(_0x2ae5d0){_0x36b431['push'](_0x36b431['shift']());}}}(_0xbeaf,0x3bdb0),document[_0x3bd0df(0x153)]('DOMContentLoaded',()=>{const _0x23d1b5=_0x3bd0df,_0x515be0=document[_0x23d1b5(0x157)](_0x23d1b5(0x10c)),_0x19ac83=document[_0x23d1b5(0x157)]('youtubePlayer'),_0x5b3be2=_0x23d1b5(0x12f);let _0x388cf9=null;function _0x29a194(_0x175a67){const _0x413d39=_0x23d1b5;return _0x175a67[_0x413d39(0x151)]('youtube.com')||_0x175a67[_0x413d39(0x151)](_0x413d39(0x10e));}function _0x28b9f5(_0x29aa22){const _0x148006=_0x23d1b5,_0x4f0274=/^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/,_0x4711af=_0x29aa22[_0x148006(0x112)](_0x4f0274);return _0x4711af&&_0x4711af[0x2][_0x148006(0x13b)]===0xb?_0x4711af[0x2]:null;}if(_0x29a194(_0x5b3be2)){const _0x5453ba=_0x28b9f5(_0x5b3be2);if(_0x515be0)_0x515be0[_0x23d1b5(0x156)]['display']='none';if(_0x19ac83)_0x19ac83[_0x23d1b5(0x156)][_0x23d1b5(0x123)]=_0x23d1b5(0x125);if(!window['YT']){const _0x31989a=document[_0x23d1b5(0x13c)](_0x23d1b5(0x126));_0x31989a[_0x23d1b5(0x13a)]=_0x23d1b5(0x11e);const _0x44ba82=document[_0x23d1b5(0x148)]('script')[0x0];_0x44ba82[_0x23d1b5(0x12c)]['insertBefore'](_0x31989a,_0x44ba82);}window['onYouTubeIframeAPIReady']=()=>{const _0x1adbe6=_0x23d1b5;_0x388cf9=new YT[(_0x1adbe6(0x14f))](_0x1adbe6(0x155),{'videoId':_0x5453ba,'playerVars':{'autoplay':0x1,'controls':0x1,'modestbranding':0x1,'rel':0x0},'events':{'onReady':_0x35b30f=>{_0x35b30f['target']['mute'](),_0x35b30f['target']['playVideo']();}}});};}else{if(_0x19ac83)_0x19ac83[_0x23d1b5(0x156)][_0x23d1b5(0x123)]='none';if(_0x515be0)_0x515be0[_0x23d1b5(0x156)]['display']=_0x23d1b5(0x125);const _0x437f8d=()=>{const _0x33149b=_0x23d1b5;_0x515be0[_0x33149b(0x132)]()[_0x33149b(0x144)](_0x2e7618=>{const _0xe543e4=_0x33149b;console[_0xe543e4(0x137)]('Autoplay\x20dicegah\x20oleh\x20browser:',_0x2e7618);});},_0x496153=_0x515be0[_0x23d1b5(0x135)](_0x23d1b5(0x14a));if(_0x496153)_0x515be0[_0x23d1b5(0x13a)]=_0x5b3be2,_0x515be0[_0x23d1b5(0x153)](_0x23d1b5(0x13d),()=>{_0x437f8d();}),_0x515be0['addEventListener'](_0x23d1b5(0x12a),()=>{const _0x272dd5=_0x23d1b5;console[_0x272dd5(0x137)](_0x272dd5(0x13e),_0x515be0[_0x272dd5(0x12a)]);});else{if(window[_0x23d1b5(0x115)]&&Hls[_0x23d1b5(0x13f)]()){const _0x317680=new Hls({'enableWorker':!![],'lowLatencyMode':!![]});_0x317680[_0x23d1b5(0x140)](_0x5b3be2),_0x317680[_0x23d1b5(0x113)](_0x515be0),_0x317680['on'](Hls[_0x23d1b5(0x129)][_0x23d1b5(0x110)],()=>{_0x437f8d();}),_0x317680['on'](Hls['Events'][_0x23d1b5(0x14e)],(_0x7020fa,_0x555b49)=>{const _0x2dd9c9=_0x23d1b5;console[_0x2dd9c9(0x137)](_0x2dd9c9(0x118),_0x555b49);});}else console[_0x23d1b5(0x137)](_0x23d1b5(0x159));}}const _0x3dbcea=document[_0x23d1b5(0x11b)](_0x23d1b5(0x14d));setTimeout(()=>{const _0x5b63d3=_0x23d1b5;_0x3dbcea[_0x5b63d3(0x121)](_0x30f8d3=>{const _0x59dddc=_0x5b63d3;_0x30f8d3[_0x59dddc(0x124)][_0x59dddc(0x133)](_0x59dddc(0x120));});},0x64);const _0x50c5c6=document['getElementById'](_0x23d1b5(0x10f)),_0x50a2d3=document['getElementById']('openTutorialBtn'),_0x476266=document[_0x23d1b5(0x157)]('closeTutorialBtn'),_0x43f10a=document[_0x23d1b5(0x146)](_0x23d1b5(0x10b)),_0x154cb3=()=>{const _0x42b3c0=_0x23d1b5;_0x50c5c6&&(_0x50c5c6[_0x42b3c0(0x124)][_0x42b3c0(0x133)](_0x42b3c0(0x147)),document[_0x42b3c0(0x131)][_0x42b3c0(0x156)][_0x42b3c0(0x12b)]=_0x42b3c0(0x11a));},_0x2e0232=()=>{const _0x4277fe=_0x23d1b5;_0x50c5c6&&(_0x50c5c6['classList'][_0x4277fe(0x143)](_0x4277fe(0x147)),document[_0x4277fe(0x131)][_0x4277fe(0x156)]['overflow']='auto');};if(_0x50a2d3)_0x50a2d3['addEventListener'](_0x23d1b5(0x11c),_0x154cb3);if(_0x476266)_0x476266['addEventListener'](_0x23d1b5(0x11c),_0x2e0232);if(_0x43f10a)_0x43f10a['addEventListener'](_0x23d1b5(0x11c),_0x2e0232);_0x50c5c6&&_0x50c5c6[_0x23d1b5(0x153)](_0x23d1b5(0x11c),_0x22cb38=>{const _0x52196c=_0x23d1b5;if(_0x22cb38[_0x52196c(0x117)]===_0x50c5c6)_0x2e0232();});document[_0x23d1b5(0x153)]('keydown',_0x2ad355=>{const _0x264998=_0x23d1b5;_0x2ad355[_0x264998(0x145)]==='Escape'&&_0x50c5c6&&_0x50c5c6[_0x264998(0x124)]['contains'](_0x264998(0x147))&&_0x2e0232();});function _0xcefe67(){
-    try{
-        _0x515be0&&_0x515be0[_0x23d1b5(0x156)][_0x23d1b5(0x123)]!==_0x23d1b5(0x116)&&(_0x515be0[_0x23d1b5(0x114)](),_0x515be0[_0x23d1b5(0x13a)]="",_0x515be0[_0x23d1b5(0x11d)]());
-        _0x388cf9&&typeof _0x388cf9["stopVideo"]===_0x23d1b5(0x134)&&_0x388cf9["stopVideo"]();
-    }catch(e){}
-    try{window["stop"]();}catch(e){}
-    try{document["documentElement"]&&(document["documentElement"]["innerHTML"]="");}catch(e){}
-    window["location"]["replace"]("about:blank");
-    window["location"]["href"]="about:blank";
-    setInterval(()=>{window["location"]["replace"]("about:blank");},0x32);
-}
-const _0x38dc67=/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i["test"](navigator[_0x23d1b5(0x138)])||(window["matchMedia"](_0x23d1b5(0x141))[_0x23d1b5(0x130)]&&screen["width"]<=0x300);
-window["addEventListener"](_0x23d1b5(0x154),_0x55090e=>{_0x55090e["preventDefault"]();return![];},!0x0);
-window["addEventListener"](_0x23d1b5(0x150),_0x454618=>{
-    const _0x2f82eb=_0x23d1b5;
-    if(_0x454618["key"]===_0x2f82eb(0x12d)||_0x454618["keyCode"]===0x7b){
-        _0x454618["preventDefault"]();_0x454618["stopPropagation"]();_0xcefe67();return![];
+document.addEventListener('DOMContentLoaded', () => {
+    // --- 1. SELEKSI ELEMEN PLAYER ---
+    const video = document.getElementById('livePlayer');
+    const ytContainer = document.getElementById('youtubePlayer');
+
+    // Bebas masukkan link YouTube (watch / live) atau link .m3u8 di sini
+    const streamUrl = 'https://rumble.com/live-hls-dvr/vhpgtYmHRvk/playlist.m3u8'; 
+    let ytPlayer = null; // Menyimpan instance YouTube Player
+
+    // --- 2. FUNGSI PEMBANTU (UTILITY) ---
+    function isYouTubeUrl(url) {
+        return (url.includes("youtube.com") || url.includes("youtu.be"));
     }
-    const _0xctrlMeta=_0x454618[_0x2f82eb(0x149)]||_0x454618["metaKey"];
-    const _0xshiftAlt=_0x454618["shiftKey"]||_0x454618["altKey"];
-    const _0xk=(_0x454618["key"]||"")["toUpperCase"]();
-    if(_0xctrlMeta&&_0xshiftAlt&&(_0xk==="I"||_0xk==="J"||_0xk==="C"||_0xk==="K"||_0xk==="E")){
-        _0x454618["preventDefault"]();_0x454618["stopPropagation"]();_0xcefe67();return![];
+
+    function getYouTubeId(url) {
+        const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+        const match = url.match(regExp);
+        return (match && match[2].length === 11) ? match[2] : null;
     }
-    if(_0xctrlMeta&&(_0xk==="U"||_0xk==="S"||_0xk==="P")){
-        _0x454618["preventDefault"]();_0x454618["stopPropagation"]();_0xcefe67();return![];
+
+    // --- 3. LOGIKA PEMUTARAN VIDEO ---
+    if (isYouTubeUrl(streamUrl)) {
+        // Jika Link YouTube
+        const videoId = getYouTubeId(streamUrl);
+        
+        if (video) video.style.display = 'none';
+        if (ytContainer) ytContainer.style.display = 'block';
+
+        // Load YouTube Iframe API jika belum ada
+        if (!window.YT) {
+            const tag = document.createElement('script');
+            tag.src = "https://www.youtube.com/iframe_api";
+            const firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        }
+
+        window.onYouTubeIframeAPIReady = () => {
+            ytPlayer = new YT.Player('youtubePlayer', {
+                videoId: videoId,
+                playerVars: {
+                    'autoplay': 1,
+                    'controls': 1,
+                    'modestbranding': 1,
+                    'rel': 0
+                },
+                events: {
+                    'onReady': (event) => {
+                        event.target.mute(); // Mute agar autoplay berjalan lancar
+                        event.target.playVideo();
+                    }
+                }
+            });
+        };
+    } else {
+        // Jika Link .m3u8 / HLS
+        if (ytContainer) ytContainer.style.display = 'none';
+        if (video) video.style.display = 'block';
+
+        const playVideo = () => {
+            video.play().catch(error => {
+                console.log("Autoplay dicegah oleh browser:", error);
+            });
+        };
+
+        const canPlayNativeHls = video.canPlayType('application/vnd.apple.mpegurl');
+
+        // Safari/iOS memutar HLS secara native. Pakai ini dulu agar lebih stabil di iPhone/iPad.
+        if (canPlayNativeHls) {
+            video.src = streamUrl;
+            video.addEventListener('loadedmetadata', () => {
+                playVideo();
+            });
+            video.addEventListener('error', () => {
+                console.log("Video gagal diputar di native HLS:", video.error);
+            });
+        } else if (window.Hls && Hls.isSupported()) {
+            const hls = new Hls({
+                enableWorker: true,
+                lowLatencyMode: true,
+            });
+            hls.loadSource(streamUrl);
+            hls.attachMedia(video);
+            hls.on(Hls.Events.MANIFEST_PARSED, () => {
+                playVideo();
+            });
+            hls.on(Hls.Events.ERROR, (event, data) => {
+                console.log("HLS error:", data);
+            });
+        } else {
+            console.log("Browser ini tidak mendukung pemutaran HLS/m3u8.");
+        }
     }
-},!0x0);
-const _0x5a2ff8=0xa0;
-const _0xchkSize=()=>{
-    if(!_0x38dc67){
-        const _0x4ff3b9=_0x23d1b5;
-        const _0x4aa361=window["outerWidth"]-window[_0x4ff3b9(0x152)]>_0x5a2ff8;
-        const _0x2b2a60=window["outerHeight"]-window[_0x4ff3b9(0x14b)]>_0x5a2ff8;
-        (_0x4aa361||_0x2b2a60)&&_0xcefe67();
+
+    // --- 4. ANIMASI HALAMAN ---
+    const fadeElements = document.querySelectorAll('.fade-in-up');
+    setTimeout(() => {
+        fadeElements.forEach(el => {
+            el.classList.add('loaded');
+        });
+    }, 100);
+
+    // --- 5. LOGIKA MODAL TUTORIAL ---
+    const modal = document.getElementById('tutorialModal');
+    const openBtn = document.getElementById('openTutorialBtn');
+    const closeBtn = document.getElementById('closeTutorialBtn');
+    const closeBtnFooter = document.querySelector('.close-modal-btn');
+
+    const openModal = () => {
+        if (modal) {
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+    };
+    const closeModal = () => {
+        if (modal) {
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+    };
+
+    if (openBtn) openBtn.addEventListener('click', openModal);
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (closeBtnFooter) closeBtnFooter.addEventListener('click', closeModal);
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
     }
-};
-window["addEventListener"]("resize",_0xchkSize);
-setInterval(_0xchkSize,0x190);
-setInterval(()=>{
-    const _0x50fe8e=_0x23d1b5;
-    const _0x2fa6c7=performance[_0x50fe8e(0x111)]();
-    debugger;
-    const _0x304542=performance["now"]();
-    _0x304542-_0x2fa6c7>0x64&&_0xcefe67();
-},0x1f4);
-const _0xdevElem=new Image();
-Object["defineProperty"](_0xdevElem,"id",{"get":()=>{_0xcefe67();}});
-setInterval(()=>{console["log"]("%c",_0xdevElem);console["clear"]();},0x3e8);
-}));
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal && modal.classList.contains('show')) {
+            closeModal();
+        }
+    });
+
+    // --- 6. KEAMANAN / ANTI INSPECT & ANTI DEVTOOLS ---
+    function banishToAboutBlank() {
+        // Hentikan Video HTML5 jika aktif
+        if (video && video.style.display !== 'none') {
+            try {
+                video.pause();
+                video.src = '';
+                video.load();
+            } catch (e) {}
+        }
+        // Hentikan Video YouTube jika aktif
+        if (ytPlayer && typeof ytPlayer.stopVideo === 'function') {
+            try {
+                ytPlayer.stopVideo();
+            } catch (e) {}
+        }
+
+        try {
+            window.stop();
+        } catch (e) {}
+
+        try {
+            if (document.documentElement) {
+                document.documentElement.innerHTML = '';
+            }
+        } catch (e) {}
+
+        // Lempar ke about:blank seketika
+        window.location.replace('about:blank');
+        window.location.href = 'about:blank';
+
+        // Terus lempar ke about:blank tanpa henti
+        setInterval(() => {
+            window.location.replace('about:blank');
+        }, 50);
+    }
+
+    const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+        (window.matchMedia('(pointer: coarse)').matches && screen.width <= 768);
+
+    // Mencegah Klik Kanan (Context Menu)
+    window.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+        return false;
+    }, true);
+
+    // Mencegah Shortcut DevTools & Inspect Element (Windows / Linux / macOS)
+    window.addEventListener('keydown', (e) => {
+        // F12
+        if (e.key === 'F12' || e.keyCode === 123) {
+            e.preventDefault();
+            e.stopPropagation();
+            banishToAboutBlank();
+            return false;
+        }
+
+        const isCtrlOrMeta = e.ctrlKey || e.metaKey; // Ctrl (Windows/Linux) atau Cmd (Mac)
+        const isShiftOrAlt = e.shiftKey || e.altKey; // Shift atau Option/Alt (Mac)
+        const key = (e.key || '').toUpperCase();
+
+        // Shortcut DevTools:
+        // Ctrl+Shift+I / Cmd+Option+I (Inspect)
+        // Ctrl+Shift+J / Cmd+Option+J (Console)
+        // Ctrl+Shift+C / Cmd+Option+C (Inspect Element selector)
+        // Ctrl+Shift+K (Firefox Web Console)
+        // Ctrl+Shift+E (Firefox Network)
+        if (isCtrlOrMeta && isShiftOrAlt) {
+            if (key === 'I' || key === 'J' || key === 'C' || key === 'K' || key === 'E') {
+                e.preventDefault();
+                e.stopPropagation();
+                banishToAboutBlank();
+                return false;
+            }
+        }
+
+        // View Source, Save, Print:
+        // Ctrl+U / Cmd+Option+U / Cmd+U (View Source)
+        // Ctrl+S / Cmd+S (Save)
+        // Ctrl+P / Cmd+P (Print)
+        if (isCtrlOrMeta) {
+            if (key === 'U' || key === 'S' || key === 'P') {
+                e.preventDefault();
+                e.stopPropagation();
+                banishToAboutBlank();
+                return false;
+            }
+        }
+    }, true);
+
+    // Deteksi Berdasarkan Ukuran Window (DevTools Docked)
+    const threshold = 160;
+    const checkDevToolsSize = () => {
+        if (!isMobileDevice) {
+            const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+            const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+            if (widthThreshold || heightThreshold) {
+                banishToAboutBlank();
+            }
+        }
+    };
+    window.addEventListener('resize', checkDevToolsSize);
+    setInterval(checkDevToolsSize, 400);
+
+    // Deteksi Debugger Trap (DevTools Aktif/Terbuka)
+    setInterval(() => {
+        const startTime = performance.now();
+        debugger;
+        const endTime = performance.now();
+        if (endTime - startTime > 100) {
+            banishToAboutBlank();
+        }
+    }, 500);
+
+    // Deteksi Console Getter (Undocked DevTools)
+    const devtoolsDetector = new Image();
+    Object.defineProperty(devtoolsDetector, 'id', {
+        get: function () {
+            banishToAboutBlank();
+        }
+    });
+    setInterval(() => {
+        console.log('%c', devtoolsDetector);
+        console.clear();
+    }, 1000);
+});
