@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const ytContainer = document.getElementById('youtubePlayer');
 
     // Bebas masukkan link YouTube (watch / live) atau link .m3u8 di sini
-    const streamUrl = 'https://vsd163.okcdn.ru/hls/21014361148059.m3u8/sig/z6qYWTlWXAI/expires/1795244860750/srcIp/204.51.36.124/urls/95.163.35.52/clientType/0/srcAg/CHROME_ANDROID/mid/17259241741979/21014361148059_high/index.m3u8?p'; 
+    const streamUrl = 'https://jkt-2.media-delivery.net/mnet/v1_211/index.m3u8?token=eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4R0NNIn0..ZzMjf_VJBvqUJy0_._dQFkhSRSpezGPToD5hHWtuJFOD3e6H6O-HU2KTXQVSYkTVHXUCZUBCWZWIcA12A4nbTpip6oRTeRpMpTKDys3kmMVeZbCWoyTCYQXxmxFUaiFcHSdgKNlFriCI2Ljzfk3I6FRmTB3a1FYI3tLNj1-Y0AqhFGhIFMeH-3yYSCKkhuyLYwM5FNMk2D950yZTp6IUpX16yWoIubKgr8dqEr9PkvVc2VGYh7M6E6sLKQDwn6mzovp7FNXPZ2hqELPv4T7IAU1iYJrFjQA-Q1YybFrYEt99IQ-cty08Daot26x0R3psXEXZG3EFroa7NdH6iV9COruSYDnZPkTsuX_Uk0JJy7_qW_b5lajGPH62JA2omyjGpPQxuiOBmOYDe-mlb-DEs2p_44erhszjvaKnQiIX1Din0OVVrX_HnOJ_rz89MqarQx57Wsy1DlDBQRj-ucj_TCShQRNmPly2yDB0-UaRPz_C5FiHyEE70l82w58M5pu2yFbyYv98Ne47DrufOyJVrvAKSxihejAV3brW7lT-Au2ktJIDjILOPHKboHHemC3M63kZfGWYfISYPfIXicsoxR0oyFSLjoYjzb9irGHacmaWjkbFzn7hf.sfzZaww8yCRvz6H9mvYIdQ&platformLanguage=en'; 
     let ytPlayer = null; // Menyimpan instance YouTube Player
 
     // --- 2. FUNGSI PEMBANTU (UTILITY) ---
